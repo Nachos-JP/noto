@@ -1,10 +1,11 @@
 import { app, BrowserWindow, ipcMain } from 'electron'
 import { join } from 'node:path'
 import { IPC_CHANNELS } from '../shared/ipc'
-import { createEmptyAppState, type AppState } from '../shared/todo'
+import type { AppState } from '../shared/todo'
+import { TodoStore } from './todoStore'
 
 let mainWindow: BrowserWindow | null = null
-let state = createEmptyAppState()
+let todoStore: TodoStore | null = null
 
 const createWindow = (): void => {
   mainWindow = new BrowserWindow({
@@ -34,13 +35,16 @@ const createWindow = (): void => {
   }
 }
 
-ipcMain.handle(IPC_CHANNELS.loadState, () => state)
-ipcMain.handle(IPC_CHANNELS.saveState, (_event, nextState: AppState) => {
-  state = nextState
-  return state
+ipcMain.handle(IPC_CHANNELS.loadState, async () => {
+  return todoStore?.load()
+})
+
+ipcMain.handle(IPC_CHANNELS.saveState, async (_event, nextState: AppState) => {
+  return todoStore?.save(nextState)
 })
 
 app.whenReady().then(() => {
+  todoStore = new TodoStore(app.getPath('userData'))
   createWindow()
 
   app.on('activate', () => {
