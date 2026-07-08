@@ -1,9 +1,9 @@
-import type { NotoApi } from '../shared/ipc'
+import type {NotoApi} from "../shared/ipc";
 
 declare global {
   interface Window {
-    noto: NotoApi
+    noto: NotoApi;
   }
 }
 
-export {}
+export {};
