@@ -8,6 +8,7 @@
   "scripts": {
     "dev": "electron-vite dev",
     "build": "npm run typecheck && electron-vite build",
+    "icons": "node scripts/generate-icons.mjs",
     "typecheck": "tsc --noEmit -p tsconfig.json && tsc --noEmit -p tsconfig.node.json",
     "lint": "eslint .",
     "test": "vitest run",
@@ -51,6 +52,7 @@
   "build": {
     "appId": "dev.shota.noto",
     "productName": "Noto",
+    "icon": "build/icon",
     "directories": {
       "output": "release"
     },

@@ -1,0 +1,67 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 1024 1024"
+  role="img"
+  aria-label="Noto app icon"
+>
+  <defs>
+    <linearGradient
+      id="base"
+      x1="160"
+      y1="100"
+      x2="900"
+      y2="940"
+      gradientUnits="userSpaceOnUse"
+    >
+      <stop offset="0" stop-color="#202733" />
+      <stop offset="0.52" stop-color="#111827" />
+      <stop offset="1" stop-color="#071015" />
+    </linearGradient>
+    <linearGradient
+      id="mark"
+      x1="230"
+      y1="170"
+      x2="800"
+      y2="850"
+      gradientUnits="userSpaceOnUse"
+    >
+      <stop offset="0" stop-color="#7dd3fc" />
+      <stop offset="0.46" stop-color="#5eead4" />
+      <stop offset="1" stop-color="#22c55e" />
+    </linearGradient>
+    <filter id="lift" x="-25%" y="-25%" width="150%" height="150%">
+      <feDropShadow
+        dx="0"
+        dy="30"
+        stdDeviation="28"
+        flood-color="#000000"
+        flood-opacity="0.38"
+      />
+      <feDropShadow
+        dx="0"
+        dy="0"
+        stdDeviation="22"
+        flood-color="#5eead4"
+        flood-opacity="0.22"
+      />
+    </filter>
+  </defs>
+  <rect width="1024" height="1024" rx="220" fill="url(#base)" />
+  <path
+    d="M196 742V282c0-50 41-91 91-91h450c50 0 91 41 91 91v460c0 50-41 91-91 91H287c-50 0-91-41-91-91Z"
+    fill="#0f172a"
+    opacity="0.68"
+  />
+  <path
+    d="M292 748V276h124l224 285V276h92v472H620L384 448v300h-92Z"
+    fill="url(#mark)"
+    filter="url(#lift)"
+  />
+  <path d="M424 276h95l213 271v126L424 276Z" fill="#e2f8f4" opacity="0.2" />
+  <path d="M292 748h92V448l-92-117v417Z" fill="#03100f" opacity="0.24" />
+  <path
+    d="M287 191h450c50 0 91 41 91 91v74H196v-74c0-50 41-91 91-91Z"
+    fill="#ffffff"
+    opacity="0.045"
+  />
+</svg>
