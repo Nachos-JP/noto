@@ -2,7 +2,7 @@
   "name": "noto",
   "version": "0.1.0",
   "description": "A local-first desktop todo app built with Electron, React, and TypeScript.",
-  "main": "./dist/main/index.js",
+  "main": "./out/main/index.js",
   "type": "module",
   "scripts": {
     "dev": "electron-vite dev",
@@ -11,7 +11,7 @@
     "lint": "eslint .",
     "test": "vitest run",
     "test:watch": "vitest",
-    "test:e2e": "playwright test",
+    "test:e2e": "npm run build && playwright test",
     "package": "npm run build && electron-builder --dir",
     "dist": "npm run build && electron-builder"
   },
@@ -55,7 +55,7 @@
       "output": "release"
     },
     "files": [
-      "dist/**/*",
+      "out/**/*",
       "package.json"
     ],
     "mac": {

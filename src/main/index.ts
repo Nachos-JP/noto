@@ -7,6 +7,10 @@ import { TodoStore } from './todoStore'
 let mainWindow: BrowserWindow | null = null
 let todoStore: TodoStore | null = null
 
+if (process.env.NOTO_USER_DATA_PATH) {
+  app.setPath('userData', process.env.NOTO_USER_DATA_PATH)
+}
+
 const createWindow = (): void => {
   mainWindow = new BrowserWindow({
     width: 1280,
@@ -17,7 +21,7 @@ const createWindow = (): void => {
     backgroundColor: '#111318',
     show: false,
     webPreferences: {
-      preload: join(__dirname, '../preload/index.js'),
+      preload: join(__dirname, '../preload/index.mjs'),
       sandbox: false,
       contextIsolation: true,
       nodeIntegration: false
