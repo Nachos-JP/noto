@@ -2,6 +2,7 @@
   "name": "noto",
   "version": "0.1.0",
   "description": "A local-first desktop todo app built with Electron, React, and TypeScript.",
+  "author": "Shota",
   "main": "./out/main/index.js",
   "type": "module",
   "scripts": {
@@ -16,9 +17,7 @@
     "dist": "npm run build && electron-builder"
   },
   "dependencies": {
-    "@electron-toolkit/preload": "^3.0.2",
     "@vitejs/plugin-react": "5.0.4",
-    "electron-updater": "^6.6.2",
     "lucide-react": "^0.468.0",
     "nanoid": "^5.1.6",
     "react": "^19.2.3",
@@ -30,6 +29,7 @@
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.2",
     "@testing-library/user-event": "^14.6.1",
+    "@electron-toolkit/preload": "^3.0.2",
     "@types/node": "^22.19.2",
     "@types/react": "^19.2.8",
     "@types/react-dom": "^19.2.3",
